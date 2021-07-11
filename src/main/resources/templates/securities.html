@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Securities</title>
+</head>
+<body>
+    <a>Статус: </a>
+    <a id = "myStatus">...</a>
+<hr>
+<a href="..">вернуться на главную</a>
+<h2>Все записи ценных бумаг</h2>
+<button onclick="getList()">Обновить</button>
+<div style="color:blue" id="resultList"></div>
+<script>
+const myPath = "securities"
+const deleteBy = "secid"
+function deleteFormula(result){return result.secid}
+</script>
+<script src="js/code.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Securities history</title>
+</head>
+<body>
+<a>Статус: </a>
+<a id = "myStatus">...</a>
+<hr>
+<h2>Добавление информации</h2>
+<h3>по ценным бумагам:</h3>
+<form name="secFile" method="post" action="api/securities" enctype="multipart/form-data" >
+    <input type="file" name="file" multiple accept="application/xml" required>
+    <input type="submit" value="Загрузить" >
+</form>
+<br>
+<form name="secForm" method="post" action="api/securities">
+    <input type="hidden" name="_method" value="PUT" required>
+    <input type="text" name="id" pattern="\d+" placeholder="Введите id" required>
+    <input type="text" name="secid" placeholder="sec id" required>
+    <input type="text" name="regnumber" placeholder="reg number" required>
+    <input type="text" name="name" placeholder="name" required>
+    <input type="text" name="emitentTitle" placeholder="emitent title" required>
+    <input type="submit" value="Добавить" >
+</form>
+<br>
+<a href="securities">Просмотреть все записи ценных бумаг</a>
+<h3>по истории торгов:</h3>
+<form name="histFile" method="post" action="api/histories" enctype="multipart/form-data" >
+    <input type="file" name="file" multiple accept="application/xml" required>
+    <input type="submit" value="Загрузить" >
+</form>
+<br>
+<form name="histForm" method="post" action="api/histories">
+    <input type="hidden" name="_method" value="PUT" required>
+    <input type="text" name="secid" placeholder="sec id" required>
+    <input type="date" name="tradedate"  required>
+    <input type="text" pattern="\d+" name="numtrades" placeholder="numtrades" title="Введите целое число!" required>
+    <input type="text" pattern="[\d\.]+" name="open" placeholder="open" title="Введите число с точкой!" required>
+    <input type="text" pattern="[\d\.]+" name="close" placeholder="close" title="Введите число с точкой!" required>
+    <input type="submit" value="Добавить" >
+</form>
+<br>
+<a href="histories">Просмотреть все записи истории торгов</a>
+<hr>
+<h2>Вывод информации</h2>
+<form name="infoForm" method="get" action="api/info">
+    <input type="text" name="secid" placeholder="Введите sec id">
+    <input type="date" name="date">
+    <input type="submit" value="Найти">
+</form>
+<h3>Результат:</h3>
+<div style="color: blue" id="infoResult"></div>
+<script src="js/index.js"></script>
+</body>
+</html>
