@@ -27,7 +27,6 @@ CREATE TABLE public.security
     name character varying(255) COLLATE pg_catalog."default" NOT NULL,
     regnumber character varying(63) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT security_pkey PRIMARY KEY (secid),
-    CONSTRAINT uk_security UNIQUE (id)
 )
 
 TABLESPACE pg_default;

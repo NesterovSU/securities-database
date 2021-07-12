@@ -19,7 +19,6 @@ import java.util.List;
 public class Security {
 
     @NotNull
-    @Column(unique = true)
     private Integer id;
 
     @Id

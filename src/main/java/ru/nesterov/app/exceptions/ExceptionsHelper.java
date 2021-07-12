@@ -1,6 +1,5 @@
 package ru.nesterov.app.exceptions;
 
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -41,13 +40,6 @@ public class ExceptionsHelper {
                 return body;
         }
 
-        @ResponseStatus(value= HttpStatus.CONFLICT) //409
-        @ExceptionHandler(DataIntegrityViolationException.class)
-        public @ResponseBody Map<String, String> conflict() {
-                Map<String, String> body = new HashMap<String,String>();
-                body.put("error", "такой id уже существует в другой записи");
-                return body;
-        }
 
         @ResponseStatus(value= HttpStatus.BAD_REQUEST) //400
         @ExceptionHandler({
