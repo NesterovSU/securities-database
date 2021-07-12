@@ -13,8 +13,6 @@ CREATE DATABASE data
 
 \c data
 
-
-
 -- Table: public.security
 
 --DROP TABLE public.security CASCADE;
@@ -26,7 +24,7 @@ CREATE TABLE public.security
     id integer NOT NULL,
     name character varying(255) COLLATE pg_catalog."default" NOT NULL,
     regnumber character varying(63) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT security_pkey PRIMARY KEY (secid),
+    CONSTRAINT security_pkey PRIMARY KEY (secid)
 )
 
 TABLESPACE pg_default;

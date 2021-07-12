@@ -31,7 +31,6 @@ public class ExceptionsHelper {
         })
         public void notExistedForDelete(){}
 
-
         @ResponseStatus(value = HttpStatus.NOT_ACCEPTABLE) // 406
         @ExceptionHandler(org.hibernate.id.IdentifierGenerationException.class)
         public @ResponseBody Map<String, String> idGen(){
@@ -39,7 +38,6 @@ public class ExceptionsHelper {
                 body.put("error", "не найдена ценная бумага с таким secid");
                 return body;
         }
-
 
         @ResponseStatus(value= HttpStatus.BAD_REQUEST) //400
         @ExceptionHandler({
@@ -50,6 +48,7 @@ public class ExceptionsHelper {
                 body.put("error", "неверные данные");
                 return body;
         }
+
         @ResponseStatus(value = HttpStatus.UNSUPPORTED_MEDIA_TYPE) // 415
         @ExceptionHandler(MyParseException.class)
         public @ResponseBody Map<String, String> parsingFault(){
