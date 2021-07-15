@@ -15,8 +15,6 @@ CREATE DATABASE data
 
 -- Table: public.security
 
---DROP TABLE public.security CASCADE;
-
 CREATE TABLE public.security
 (
     secid character varying(12) COLLATE pg_catalog."default" NOT NULL,
@@ -28,14 +26,9 @@ CREATE TABLE public.security
 )
 
 TABLESPACE pg_default;
-ALTER TABLE public.security
-OWNER to postgres;
-
 
 
 --Table: public.history
-
---DROP TABLE public.history;
 
 CREATE TABLE public.history
 (
@@ -52,5 +45,3 @@ CREATE TABLE public.history
         ON DELETE NO ACTION
 )
 TABLESPACE pg_default;
-ALTER TABLE public.history
-OWNER to postgres;
