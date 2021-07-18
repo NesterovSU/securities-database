@@ -86,7 +86,7 @@ ____
 ```http
 PUT api/histories
 Content-Type: 'application/x-www-form-urlencoded'
-body: 'secid=AFLT&tradedat=2020-04-15&numtrades=58827&open=75.04&close=72.1'
+body: 'secid=AFLT&tradedate=2020-04-15&numtrades=58827&open=75.04&close=72.1'
 ```
 tradedate – тип String,    
 numtrades - тип int,     
