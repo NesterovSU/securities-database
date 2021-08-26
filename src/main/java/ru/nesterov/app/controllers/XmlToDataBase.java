@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * This class writes records to history and security databases from .xml files
  * @author Sergey Nesterov
  */
 @Component
@@ -121,7 +122,10 @@ public class XmlToDataBase {
         }
     }//parseHistoryXml()
 
-
+/**
+* Parse .xml file 
+* @return row elements list from .xml file
+*/
     private NodeList prepare(MultipartFile multipartFile)
             throws
             IOException,
